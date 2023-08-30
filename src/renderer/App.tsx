@@ -1,50 +1,58 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
-
-function Hello() {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import LeftSidebar from './components/MenuBar/LeftSidebar';
+import Sevas from './components/pages/Sevas/Sevas';
+import Billing from './components/pages/Billing/Billing';
+import Settings from './components/pages/Settings/Settings';
+import Reports from './components/pages/Reports/Reports';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <LeftSidebar />
+                 <Billing />{' '}
+              </>
+            }
+          />
+          <Route
+            path="/sevas"
+            element={
+              <>
+                <LeftSidebar />
+                <Sevas />
+              </>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <>
+                <LeftSidebar />
+                <Settings/>
+              </>
+            }
+          />
+                    <Route
+            path="/reports"
+            element={
+              <>
+                <LeftSidebar />
+                <Reports/>
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }

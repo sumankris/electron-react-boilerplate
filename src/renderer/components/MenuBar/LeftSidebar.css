@@ -1,0 +1,47 @@
+.left-sidebar {
+    width: 250px;
+    background-color: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 20px;
+  }
+  .left-sidebar>h3{
+    text-align: center;
+    color: white;
+    padding-bottom: 30px;
+  }
+  
+  .left-sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .left-sidebar li {
+   
+    text-align: center;
+    border: solid 1px white;
+    margin: 10px;
+    border-radius: 5px;
+    
+  }
+  
+  .left-sidebar a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .left-sidebar a:hover {
+    color: #000000;
+    background-color: white;
+  }
+  
+  .left-sidebar svg {
+    margin-right: 10px;
+  }
+  
